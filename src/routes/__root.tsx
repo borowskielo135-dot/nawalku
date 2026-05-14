@@ -11,30 +11,6 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
-import { I18nProvider } from "../i18n/context";
-
-const restaurantJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  name: "NA WAŁKU - Neapolitan Pizza",
-  servesCuisine: ["Italian", "Pizza", "Neapolitan"],
-  priceRange: "40–60 PLN",
-  telephone: "+48513718011",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Hetmańska 1C",
-    addressLocality: "Wałbrzych",
-    postalCode: "58-316",
-    addressCountry: "PL",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "1988",
-  },
-  openingHours: ["Mo-Th 13:00-22:00", "Fr-Sa 13:00-23:00", "Su 13:00-22:00"],
-  acceptsReservations: "True",
-};
 
 function NotFoundComponent() {
   return (
@@ -77,26 +53,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "NA WAŁKU — Neapolitan Pizza w Wałbrzychu" },
+      { title: "NA WAŁKU — Neapolitan Pizza Wałbrzych" },
       { name: "description", content: "Prawdziwa neapolitańska pizza w Wałbrzychu. Hetmańska 1C. Ocena 4,8 ★ (1988 opinii). Rezerwacje: 513 718 011." },
       { name: "author", content: "NA WAŁKU" },
-      { property: "og:title", content: "NA WAŁKU — Neapolitan Pizza" },
-      { property: "og:description", content: "Prawdziwa neapolitańska pizza w sercu Wałbrzycha." },
+      { property: "og:title", content: "NA WAŁKU — Neapolitan Pizza Wałbrzych" },
+      { property: "og:description", content: "Prawdziwa neapolitańska pizza w Wałbrzychu. Hetmańska 1C. Ocena 4,8 ★ (1988 opinii). Rezerwacje: 513 718 011." },
       { property: "og:type", content: "restaurant" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "NA WAŁKU — Neapolitan Pizza Wałbrzych" },
+      { name: "twitter:description", content: "Prawdziwa neapolitańska pizza w Wałbrzychu. Hetmańska 1C. Ocena 4,8 ★ (1988 opinii). Rezerwacje: 513 718 011." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/9c5b96a1-cf7c-43aa-a649-7befa371a31d" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/9c5b96a1-cf7c-43aa-a649-7befa371a31d" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "https://nawalku.pl/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(restaurantJsonLd),
-      },
     ],
   }),
   shellComponent: RootShell,
@@ -123,13 +96,11 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <I18nProvider>
-        <Header />
-        <main className="min-h-screen pt-20">
-          <Outlet />
-        </main>
-        <Footer />
-      </I18nProvider>
+      <Header />
+      <main className="min-h-screen pt-20">
+        <Outlet />
+      </main>
+      <Footer />
     </QueryClientProvider>
   );
 }

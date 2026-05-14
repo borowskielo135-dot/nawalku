@@ -3,7 +3,7 @@ import { useState } from "react";
 import { menu, dodatki } from "@/data/menu";
 import { useReveal } from "@/hooks/use-reveal";
 import { useI18n } from "@/i18n/context";
-import { Pizza, Wine, Coffee, Salad, Beer, Sparkles, Soup, Cake } from "lucide-react";
+import { Pizza, Coffee, Salad, Beer, Sparkles, Soup, Cake } from "lucide-react";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({

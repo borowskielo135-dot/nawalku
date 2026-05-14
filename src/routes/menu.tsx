@@ -36,9 +36,6 @@ function MenuPage() {
   const visibleIds = groupsConfig.find((g) => g.key === activeKey)?.ids ?? [];
   const sections = menu.filter((s) => visibleIds.includes(s.id));
 
-  // Avoid unused import warning
-  void Wine;
-
   return (
     <div className="bg-background">
       {/* HEADER */}

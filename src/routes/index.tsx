@@ -7,6 +7,7 @@ import diavolaImg from "@/assets/diavola.jpg";
 import burrataImg from "@/assets/burrata.jpg";
 import margheritaImg from "@/assets/margherita.jpg";
 import { useReveal } from "@/hooks/use-reveal";
+import { useI18n } from "@/i18n/context";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,6 +16,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Autentyczna pizza neapolitańska w Wałbrzychu. Wypiekana w piecu opalanym drewnem. Hetmańska 1C. Rezerwacje: 513 718 011." },
       { property: "og:title", content: "NA WAŁKU — Neapolitan Pizza" },
       { property: "og:description", content: "Najlepsza pizza neapolitańska w Wałbrzychu. 4,8 ★ na podstawie 1988 opinii." },
+      { property: "og:image", content: "/og-image.jpg" },
+      { name: "twitter:image", content: "/og-image.jpg" },
+      { name: "keywords", content: "pizza Wałbrzych, neapolitańska pizza, najlepsza pizza Wałbrzych, pizzeria Wałbrzych, Hetmańska, NA WAŁKU, dostawa pizzy Wałbrzych" },
     ],
   }),
   component: HomePage,
@@ -48,7 +52,8 @@ const reviews = [
 ];
 
 function HomePage() {
-  useReveal();
+  const { t, lang } = useI18n();
+  useReveal([lang]);
   return (
     <div>
       {/* HERO */}
@@ -63,17 +68,16 @@ function HomePage() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-cream/10 backdrop-blur-md border border-cream/20 rounded-full px-4 py-2 text-cream text-xs uppercase tracking-[0.25em] animate-fade-in">
               <Flame className="w-3.5 h-3.5 text-gold" />
-              Wypiekane w piecu opalanym drewnem
+              {t("hero.badge")}
             </div>
             <h1 className="mt-6 font-display text-5xl sm:text-7xl md:text-8xl font-bold text-cream leading-[0.95] text-balance animate-fade-up">
               NA WAŁKU
               <span className="block text-gold text-3xl sm:text-4xl md:text-5xl mt-3 font-medium italic">
-                neapolitan pizza
+                {t("hero.subtitle")}
               </span>
             </h1>
             <p className="mt-8 text-lg md:text-xl text-cream/85 max-w-xl leading-relaxed animate-fade-up delay-200">
-              Autentyczna pizza z Neapolu w sercu Wałbrzycha. Cienkie, chrupiące ciasto,
-              San Marzano DOP, mozzarella di bufala — wszystko z najwyższej półki.
+              {t("hero.lead")}
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-300">
@@ -81,7 +85,7 @@ function HomePage() {
                 to="/menu"
                 className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold shadow-2xl shadow-primary/30 hover:scale-105 hover:shadow-primary/50 transition-all"
               >
-                Zobacz menu
+                {t("hero.cta.menu")}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
@@ -89,7 +93,7 @@ function HomePage() {
                 className="inline-flex items-center gap-3 bg-cream/10 backdrop-blur-md border border-cream/30 text-cream px-8 py-4 rounded-full font-semibold hover:bg-cream hover:text-charcoal transition-all"
               >
                 <Phone className="w-5 h-5" />
-                Zarezerwuj stolik
+                {t("hero.cta.book")}
               </a>
             </div>
 
@@ -100,15 +104,15 @@ function HomePage() {
                 </div>
                 <div>
                   <div className="font-bold text-lg leading-none">4,8 / 5</div>
-                  <div className="text-xs text-cream/60 mt-1">1988 opinii Google</div>
+                  <div className="text-xs text-cream/60 mt-1">1988 {t("hero.reviews")}</div>
                 </div>
               </div>
               <div className="h-10 w-px bg-cream/20 hidden sm:block" />
               <div className="flex items-center gap-3">
                 <Award className="w-6 h-6 text-gold" />
                 <div>
-                  <div className="font-bold text-lg leading-none">Top pizzeria</div>
-                  <div className="text-xs text-cream/60 mt-1">w Wałbrzychu</div>
+                  <div className="font-bold text-lg leading-none">{t("hero.top")}</div>
+                  <div className="text-xs text-cream/60 mt-1">{t("hero.topSub")}</div>
                 </div>
               </div>
             </div>
@@ -116,7 +120,7 @@ function HomePage() {
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/60 text-xs uppercase tracking-[0.3em] animate-pulse">
-          Przewiń ↓
+          {t("hero.scroll")} ↓
         </div>
       </section>
 
@@ -124,10 +128,10 @@ function HomePage() {
       <section className="bg-charcoal text-cream py-8 border-y border-cream/10">
         <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
-            { icon: MapPin, label: "Adres", value: "Hetmańska 1C, Wałbrzych" },
-            { icon: Clock, label: "Otwarte", value: "Pon–Niedz: 13:00 – 22:00" },
-            { icon: Phone, label: "Telefon", value: "513 718 011" },
-            { icon: Users, label: "Średnio", value: "40–60 zł / osoba" },
+            { icon: MapPin, label: t("info.address"), value: "Hetmańska 1C, Wałbrzych" },
+            { icon: Clock, label: t("info.open"), value: t("info.openValue") },
+            { icon: Phone, label: t("info.phone"), value: "513 718 011" },
+            { icon: Users, label: t("info.avg"), value: t("info.avgValue") },
           ].map((item, i) => (
             <div key={i} className="flex flex-col items-center gap-2 reveal" style={{ transitionDelay: `${i * 80}ms` }}>
               <item.icon className="w-5 h-5 text-gold" />
@@ -142,21 +146,18 @@ function HomePage() {
       <section className="py-24 md:py-32 bg-grain">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="reveal">
-            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Nasza historia</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">{t("story.kicker")}</div>
             <h2 className="mt-4 font-display text-4xl md:text-6xl font-bold leading-tight text-balance">
-              Pizza, jakiej nigdy nie jadłeś.
+              {t("story.title")}
             </h2>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-              W NA WAŁKU robimy pizzę dokładnie tak, jak robi się ją w Neapolu — od długo
-              dojrzewającego ciasta, przez San Marzano DOP, po piec opalany drewnem.
-              Każda pizza wychodzi z pieca w mniej niż 90 sekund i trafia na stół chrupiąca,
-              aromatyczna i z lekko opieczonym brzegiem.
+              {t("story.body")}
             </p>
             <div className="mt-10 grid sm:grid-cols-3 gap-6">
               {[
-                { icon: ChefHat, title: "48h", desc: "Tyle dojrzewa nasze ciasto" },
-                { icon: Flame, title: "450°C", desc: "Temperatura w piecu" },
-                { icon: Leaf, title: "100%", desc: "Składniki z Włoch" },
+                { icon: ChefHat, title: "48h", desc: t("story.s1") },
+                { icon: Flame, title: "450°C", desc: t("story.s2") },
+                { icon: Leaf, title: "100%", desc: t("story.s3") },
               ].map((s, i) => (
                 <div key={i} className="text-center sm:text-left">
                   <s.icon className="w-7 h-7 text-primary mx-auto sm:mx-0" />
@@ -179,12 +180,12 @@ function HomePage() {
       <section className="py-24 md:py-32 bg-secondary/40">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto reveal">
-            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Najczęściej zamawiane</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">{t("pop.kicker")}</div>
             <h2 className="mt-4 font-display text-4xl md:text-6xl font-bold text-balance">
-              Ulubione pizze naszych gości
+              {t("pop.title")}
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Trzy pizze, które trafiają na stół najczęściej. Każda z prawdziwym charakterem.
+              {t("pop.body")}
             </p>
           </div>
 
@@ -208,7 +209,7 @@ function HomePage() {
 
           <div className="text-center mt-14 reveal">
             <Link to="/menu" className="inline-flex items-center gap-3 text-primary font-semibold hover:gap-5 transition-all">
-              Zobacz pełne menu <ArrowRight className="w-5 h-5" />
+              {t("pop.full")} <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -219,9 +220,9 @@ function HomePage() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "Na miejscu", desc: "Klimatyczna sala z piecem opalanym drewnem", emoji: "🍷" },
-              { title: "Na wynos", desc: "Zamów telefonicznie i odbierz osobiście", emoji: "📦" },
-              { title: "Dostawa", desc: "Dowozimy gorącą pizzę pod twoje drzwi", emoji: "🛵" },
+              { title: t("opt.dinein"), desc: t("opt.dineinDesc"), emoji: "🍷" },
+              { title: t("opt.takeaway"), desc: t("opt.takeawayDesc"), emoji: "📦" },
+              { title: t("opt.delivery"), desc: t("opt.deliveryDesc"), emoji: "🛵" },
             ].map((o, i) => (
               <div key={o.title} className="reveal bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/30 transition-all hover:-translate-y-1" style={{ transitionDelay: `${i * 100}ms` }}>
                 <div className="text-4xl">{o.emoji}</div>
@@ -237,11 +238,11 @@ function HomePage() {
       <section className="py-24 md:py-32 bg-charcoal text-cream">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto reveal">
-            <div className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">Opinie gości</div>
+            <div className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">{t("rev.kicker")}</div>
             <h2 className="mt-4 font-display text-4xl md:text-6xl font-bold text-balance">
-              4,8 ★ na podstawie 1988 opinii
+              {t("rev.title")}
             </h2>
-            <p className="mt-4 text-cream/70">Co mówią o nas ludzie, którzy nas odwiedzili.</p>
+            <p className="mt-4 text-cream/70">{t("rev.body")}</p>
           </div>
 
           <div className="mt-16 grid md:grid-cols-3 gap-6">
@@ -266,10 +267,10 @@ function HomePage() {
         <div className="absolute inset-0 opacity-10 bg-grain" />
         <div className="container mx-auto px-6 text-center relative z-10 reveal">
           <h2 className="font-display text-4xl md:text-6xl font-bold text-balance max-w-3xl mx-auto leading-tight">
-            Zarezerwuj stolik i poczuj smak prawdziwej Italii
+            {t("cta.title")}
           </h2>
           <p className="mt-6 text-primary-foreground/80 max-w-xl mx-auto text-lg">
-            Zadzwoń do nas albo wpadnij na Hetmańską 1C. Czekamy od 13:00.
+            {t("cta.body")}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="tel:+48513718011" className="inline-flex items-center gap-3 bg-cream text-charcoal px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform shadow-2xl">
@@ -277,7 +278,7 @@ function HomePage() {
               513 718 011
             </a>
             <Link to="/kontakt" className="inline-flex items-center gap-3 bg-charcoal/20 backdrop-blur border border-cream/30 text-cream px-8 py-4 rounded-full font-semibold hover:bg-charcoal/40 transition-colors">
-              Jak dojechać
+              {t("cta.directions")}
             </Link>
           </div>
         </div>

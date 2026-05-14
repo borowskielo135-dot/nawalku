@@ -11,6 +11,30 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { I18nProvider } from "../i18n/context";
+
+const restaurantJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: "NA WAŁKU - Neapolitan Pizza",
+  servesCuisine: ["Italian", "Pizza", "Neapolitan"],
+  priceRange: "40–60 PLN",
+  telephone: "+48513718011",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Hetmańska 1C",
+    addressLocality: "Wałbrzych",
+    postalCode: "58-316",
+    addressCountry: "PL",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "1988",
+  },
+  openingHours: ["Mo-Th 13:00-22:00", "Fr-Sa 13:00-23:00", "Su 13:00-22:00"],
+  acceptsReservations: "True",
+};
 
 function NotFoundComponent() {
   return (
@@ -63,9 +87,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "canonical", href: "https://nawalku.pl/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(restaurantJsonLd),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -92,11 +123,13 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      <main className="min-h-screen pt-20">
-        <Outlet />
-      </main>
-      <Footer />
+      <I18nProvider>
+        <Header />
+        <main className="min-h-screen pt-20">
+          <Outlet />
+        </main>
+        <Footer />
+      </I18nProvider>
     </QueryClientProvider>
   );
 }

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { menu, dodatki } from "@/data/menu";
 import { useReveal } from "@/hooks/use-reveal";
+import { useI18n } from "@/i18n/context";
 import { Pizza, Wine, Coffee, Salad, Beer, Sparkles, Soup, Cake } from "lucide-react";
 
 export const Route = createFileRoute("/menu")({
@@ -16,31 +17,37 @@ export const Route = createFileRoute("/menu")({
   component: MenuPage,
 });
 
-const groups: { label: string; icon: typeof Pizza; ids: string[] }[] = [
-  { label: "Pizza", icon: Pizza, ids: ["pizza-miesiaca", "rossa", "bianca", "speciale"] },
-  { label: "Przystawki", icon: Soup, ids: ["przystawki", "zupy", "focaccia"] },
-  { label: "Sałatki", icon: Salad, ids: ["salatki"] },
-  { label: "Desery", icon: Cake, ids: ["desery"] },
-  { label: "Koktajle", icon: Sparkles, ids: ["koktajle", "szprycery", "moktajle"] },
-  { label: "Piwo & Wino", icon: Beer, ids: ["piwo-lane", "piwo-butelkowe"] },
-  { label: "Napoje", icon: Coffee, ids: ["napoje-cieple", "napoje-zimne"] },
+const groupsConfig: { key: string; icon: typeof Pizza; ids: string[] }[] = [
+  { key: "menu.tab.pizza", icon: Pizza, ids: ["pizza-miesiaca", "rossa", "bianca", "speciale"] },
+  { key: "menu.tab.starters", icon: Soup, ids: ["przystawki", "zupy", "focaccia"] },
+  { key: "menu.tab.salads", icon: Salad, ids: ["salatki"] },
+  { key: "menu.tab.desserts", icon: Cake, ids: ["desery"] },
+  { key: "menu.tab.cocktails", icon: Sparkles, ids: ["koktajle", "szprycery", "moktajle"] },
+  { key: "menu.tab.beer", icon: Beer, ids: ["piwo-lane", "piwo-butelkowe"] },
+  { key: "menu.tab.drinks", icon: Coffee, ids: ["napoje-cieple", "napoje-zimne"] },
 ];
 
 function MenuPage() {
-  useReveal();
-  const [active, setActive] = useState("Pizza");
-  const visibleIds = groups.find((g) => g.label === active)?.ids ?? [];
+  const { t, lang } = useI18n();
+  const [activeKey, setActiveKey] = useState(groupsConfig[0].key);
+  // Re-run reveal observer when language or active tab changes so newly rendered sections animate in.
+  useReveal([lang, activeKey]);
+
+  const visibleIds = groupsConfig.find((g) => g.key === activeKey)?.ids ?? [];
   const sections = menu.filter((s) => visibleIds.includes(s.id));
+
+  // Avoid unused import warning
+  void Wine;
 
   return (
     <div className="bg-background">
       {/* HEADER */}
       <section className="bg-charcoal text-cream py-20 md:py-28">
         <div className="container mx-auto px-6 text-center">
-          <div className="text-xs uppercase tracking-[0.3em] text-gold animate-fade-in">Pełne menu</div>
-          <h1 className="mt-4 font-display text-5xl md:text-7xl font-bold animate-fade-up">Smakuj Italię</h1>
+          <div className="text-xs uppercase tracking-[0.3em] text-gold animate-fade-in">{t("menu.kicker")}</div>
+          <h1 className="mt-4 font-display text-5xl md:text-7xl font-bold animate-fade-up">{t("menu.title")}</h1>
           <p className="mt-4 text-cream/70 max-w-xl mx-auto animate-fade-up delay-200">
-            Pizze ok. 32 cm wypiekane w piecu opalanym drewnem. Składniki prosto z Włoch.
+            {t("menu.body")}
           </p>
         </div>
       </section>
@@ -49,12 +56,12 @@ function MenuPage() {
       <div className="sticky top-20 z-40 bg-background/95 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6">
           <div className="flex gap-2 overflow-x-auto py-4 -mx-6 px-6 scrollbar-hide">
-            {groups.map((g) => {
-              const isActive = active === g.label;
+            {groupsConfig.map((g) => {
+              const isActive = activeKey === g.key;
               return (
                 <button
-                  key={g.label}
-                  onClick={() => setActive(g.label)}
+                  key={g.key}
+                  onClick={() => setActiveKey(g.key)}
                   className={`shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                     isActive
                       ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
@@ -62,7 +69,7 @@ function MenuPage() {
                   }`}
                 >
                   <g.icon className="w-4 h-4" />
-                  {g.label}
+                  {t(g.key)}
                 </button>
               );
             })}
@@ -107,11 +114,11 @@ function MenuPage() {
           </section>
         ))}
 
-        {active === "Pizza" && (
+        {activeKey === "menu.tab.pizza" && (
           <section className="reveal mt-12 bg-secondary/50 rounded-3xl p-8 md:p-12 border border-border">
             <div className="text-center mb-8">
-              <h2 className="font-display text-3xl md:text-4xl font-bold">Skomponuj własną pizzę</h2>
-              <p className="mt-2 text-sm text-muted-foreground">Lub wybierz dodatek do swojej</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold">{t("menu.compose")}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{t("menu.composeBody")}</p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {[
@@ -121,7 +128,7 @@ function MenuPage() {
                 { title: "Inne", ...dodatki.inne },
               ].map((d) => (
                 <div key={d.title} className="bg-background rounded-xl p-6 border border-border">
-                  <h4 className="font-display text-lg font-bold text-primary uppercase tracking-wider text-sm">{d.title}</h4>
+                  <h4 className="font-display text-lg font-bold text-primary uppercase tracking-wider">{d.title}</h4>
                   <p className="mt-2 text-sm text-foreground leading-relaxed">{d.items}</p>
                   {d.price && <p className="mt-2 text-xs text-muted-foreground">{d.price}</p>}
                 </div>

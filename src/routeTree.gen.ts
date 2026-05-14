@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ONasRouteImport } from './routes/o-nas'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ONasRoute = ONasRouteImport.update({
   id: '/o-nas',
   path: '/o-nas',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/menu': typeof MenuRoute
   '/o-nas': typeof ONasRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/menu': typeof MenuRoute
   '/o-nas': typeof ONasRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/menu': typeof MenuRoute
   '/o-nas': typeof ONasRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/kontakt' | '/menu' | '/o-nas'
+  fullPaths: '/' | '/kontakt' | '/menu' | '/o-nas' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/kontakt' | '/menu' | '/o-nas'
-  id: '__root__' | '/' | '/kontakt' | '/menu' | '/o-nas'
+  to: '/' | '/kontakt' | '/menu' | '/o-nas' | '/sitemap.xml'
+  id: '__root__' | '/' | '/kontakt' | '/menu' | '/o-nas' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   MenuRoute: typeof MenuRoute
   ONasRoute: typeof ONasRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/o-nas': {
       id: '/o-nas'
       path: '/o-nas'
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   MenuRoute: MenuRoute,
   ONasRoute: ONasRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

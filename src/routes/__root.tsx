@@ -11,6 +11,30 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { I18nProvider } from "../i18n/context";
+
+const restaurantJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: "NA WAŁKU - Neapolitan Pizza",
+  servesCuisine: ["Italian", "Pizza", "Neapolitan"],
+  priceRange: "40–60 PLN",
+  telephone: "+48513718011",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Hetmańska 1C",
+    addressLocality: "Wałbrzych",
+    postalCode: "58-316",
+    addressCountry: "PL",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "1988",
+  },
+  openingHours: ["Mo-Th 13:00-22:00", "Fr-Sa 13:00-23:00", "Su 13:00-22:00"],
+  acceptsReservations: "True",
+};
 
 function NotFoundComponent() {
   return (

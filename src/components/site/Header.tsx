@@ -1,8 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useI18n } from "@/i18n/context";
 
 export function Header() {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -14,10 +18,10 @@ export function Header() {
   }, []);
 
   const links = [
-    { to: "/", label: "Strona główna" },
-    { to: "/menu", label: "Menu" },
-    { to: "/o-nas", label: "O nas" },
-    { to: "/kontakt", label: "Kontakt" },
+    { to: "/", label: t("nav.home") },
+    { to: "/menu", label: t("nav.menu") },
+    { to: "/o-nas", label: t("nav.about") },
+    { to: "/kontakt", label: t("nav.contact") },
   ] as const;
 
   return (
@@ -38,7 +42,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -50,6 +54,10 @@ export function Header() {
               {l.label}
             </Link>
           ))}
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
           <a
             href="tel:+48513718011"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg shadow-primary/20"
@@ -59,17 +67,21 @@ export function Header() {
           </a>
         </nav>
 
-        <button
-          className="md:hidden p-2 text-foreground"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        <div className="lg:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <LanguageSwitcher />
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setOpen((o) => !o)}
+            aria-label="Menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="md:hidden bg-background border-t border-border animate-fade-in">
+        <div className="lg:hidden bg-background border-t border-border animate-fade-in">
           <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {links.map((l) => (
               <Link

@@ -35,7 +35,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Facebook className="w-4 h-4 text-gold" />
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="hover:text-cream">facebook.com</a>
+              <a href="https://www.facebook.com/people/NA-WA%C5%81KU-neapolitan-pizza/100076202198882/" target="_blank" rel="noreferrer" className="hover:text-cream">NA WAŁKU on Facebook</a>
             </li>
           </ul>
         </div>

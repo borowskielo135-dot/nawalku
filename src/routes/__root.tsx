@@ -17,10 +17,11 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
+        <div className="text-7xl mb-4 animate-bounce">🍕</div>
         <h1 className="font-display text-8xl font-bold text-primary">404</h1>
         <h2 className="mt-4 text-xl font-semibold">Strona nie istnieje</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Strona, której szukasz, nie istnieje lub została przeniesiona.
+          Wygląda na to, że ta pizza została już zjedzona. Strona, której szukasz, nie istnieje.
         </p>
         <Link to="/" className="mt-6 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90">
           Wróć na stronę główną
@@ -36,14 +37,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold">Coś poszło nie tak</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Spróbuj odświeżyć stronę.</p>
-        <button
-          onClick={() => { router.invalidate(); reset(); }}
-          className="mt-6 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground"
-        >
-          Spróbuj ponownie
-        </button>
+        <div className="text-7xl mb-4 animate-pulse">🍕</div>
+        <h1 className="font-display text-5xl md:text-6xl font-bold text-primary">Ups!</h1>
+        <h2 className="mt-4 text-xl font-semibold">Coś się przypaliło w piecu</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Nie udało się załadować tej strony. Spróbuj ponownie — pizza zaraz będzie gotowa.
+        </p>
+        <div className="mt-6 flex gap-3 justify-center flex-wrap">
+          <button
+            onClick={() => { router.invalidate(); reset(); }}
+            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105"
+          >
+            Spróbuj ponownie
+          </button>
+          <Link to="/" className="rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors">
+            Strona główna
+          </Link>
+        </div>
       </div>
     </div>
   );

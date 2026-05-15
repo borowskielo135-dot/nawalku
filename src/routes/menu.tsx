@@ -30,8 +30,19 @@ const groupsConfig: { key: string; icon: typeof Pizza; ids: string[] }[] = [
 function MenuPage() {
   const { t, lang } = useI18n();
   const [activeKey, setActiveKey] = useState(groupsConfig[0].key);
+  const sectionsRef = useRef<HTMLDivElement>(null);
   // Re-run reveal observer when language or active tab changes so newly rendered sections animate in.
   useReveal([lang, activeKey]);
+
+  const handleTabClick = (key: string) => {
+    setActiveKey(key);
+    requestAnimationFrame(() => {
+      const el = sectionsRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 160;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
 
   const visibleIds = groupsConfig.find((g) => g.key === activeKey)?.ids ?? [];
   const sections = menu.filter((s) => visibleIds.includes(s.id));

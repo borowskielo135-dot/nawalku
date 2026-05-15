@@ -86,7 +86,7 @@ function MenuPage() {
       </div>
 
       {/* SECTIONS */}
-      <div className="container mx-auto px-6 py-16 md:py-24 max-w-5xl">
+      <div ref={sectionsRef} className="container mx-auto px-6 py-16 md:py-24 max-w-5xl scroll-mt-40">
         {sections.map((section) => (
           <section key={section.id} className="mb-20 reveal">
             <div className="text-center mb-10">

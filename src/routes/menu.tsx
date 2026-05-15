@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { menu, dodatki } from "@/data/menu";
 import { useReveal } from "@/hooks/use-reveal";
 import { useI18n } from "@/i18n/context";
@@ -30,8 +30,19 @@ const groupsConfig: { key: string; icon: typeof Pizza; ids: string[] }[] = [
 function MenuPage() {
   const { t, lang } = useI18n();
   const [activeKey, setActiveKey] = useState(groupsConfig[0].key);
+  const sectionsRef = useRef<HTMLDivElement>(null);
   // Re-run reveal observer when language or active tab changes so newly rendered sections animate in.
   useReveal([lang, activeKey]);
+
+  const handleTabClick = (key: string) => {
+    setActiveKey(key);
+    requestAnimationFrame(() => {
+      const el = sectionsRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 160;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
 
   const visibleIds = groupsConfig.find((g) => g.key === activeKey)?.ids ?? [];
   const sections = menu.filter((s) => visibleIds.includes(s.id));
@@ -58,7 +69,7 @@ function MenuPage() {
               return (
                 <button
                   key={g.key}
-                  onClick={() => setActiveKey(g.key)}
+                  onClick={() => handleTabClick(g.key)}
                   className={`shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                     isActive
                       ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
@@ -75,7 +86,7 @@ function MenuPage() {
       </div>
 
       {/* SECTIONS */}
-      <div className="container mx-auto px-6 py-16 md:py-24 max-w-5xl">
+      <div ref={sectionsRef} className="container mx-auto px-6 py-16 md:py-24 max-w-5xl scroll-mt-40">
         {sections.map((section) => (
           <section key={section.id} className="mb-20 reveal">
             <div className="text-center mb-10">

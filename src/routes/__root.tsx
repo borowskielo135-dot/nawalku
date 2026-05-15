@@ -11,6 +11,7 @@ import {
 import appCss from "../styles.css?url";
 import { Header } from "../components/site/Header";
 import { Footer } from "../components/site/Footer";
+import { I18nProvider } from "../i18n/context";
 
 function NotFoundComponent() {
   return (
@@ -96,11 +97,13 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <Header />
-      <main className="min-h-screen pt-20">
-        <Outlet />
-      </main>
-      <Footer />
+      <I18nProvider>
+        <Header />
+        <main className="min-h-screen pt-20">
+          <Outlet />
+        </main>
+        <Footer />
+      </I18nProvider>
     </QueryClientProvider>
   );
 }

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { menu, dodatki } from "@/data/menu";
 import { useReveal } from "@/hooks/use-reveal";
 import { useI18n } from "@/i18n/context";

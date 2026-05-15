@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useRef } from "react";
-import { menu, dodatki } from "@/data/menu";
+import { menu, dodatki, pick } from "@/data/menu";
 import { useReveal } from "@/hooks/use-reveal";
 import { useI18n } from "@/i18n/context";
 import { Pizza, Coffee, Salad, Beer, Sparkles, Soup, Cake } from "lucide-react";
@@ -90,11 +90,11 @@ function MenuPage() {
         {sections.map((section) => (
           <section key={section.id} className="mb-20 reveal">
             <div className="text-center mb-10">
-              <h2 className="font-display text-4xl md:text-5xl font-bold">{section.title}</h2>
+              <h2 className="font-display text-4xl md:text-5xl font-bold">{pick(section.title, lang)}</h2>
               {section.subtitle && (
-                <p className="mt-2 text-sm uppercase tracking-[0.25em] text-primary font-semibold">{section.subtitle}</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.25em] text-primary font-semibold">{pick(section.subtitle, lang)}</p>
               )}
-              {section.note && <p className="mt-1 text-sm text-muted-foreground italic">{section.note}</p>}
+              {section.note && <p className="mt-1 text-sm text-muted-foreground italic">{pick(section.note, lang)}</p>}
             </div>
             <div className="space-y-1">
               {section.items.map((item, i) => (
@@ -107,11 +107,11 @@ function MenuPage() {
                       <h3 className="font-display text-xl font-bold">{item.name}</h3>
                       {item.badge && (
                         <span className="inline-flex items-center text-[10px] uppercase tracking-[0.2em] font-semibold bg-primary/10 text-primary px-2 py-1 rounded-full">
-                          {item.badge}
+                          {pick(item.badge, lang)}
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                    <p className="mt-2 text-muted-foreground text-sm leading-relaxed">{pick(item.desc, lang)}</p>
                   </div>
                   <div className="shrink-0 text-right">
                     <div className="font-display text-2xl font-bold text-primary tabular-nums">{item.price} <span className="text-sm font-medium text-muted-foreground">zł</span></div>
@@ -129,18 +129,16 @@ function MenuPage() {
               <p className="mt-2 text-sm text-muted-foreground">{t("menu.composeBody")}</p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
-              {[
-                { title: "Mięsny", ...dodatki.miesny },
-                { title: "Warzywny", ...dodatki.warzywny },
-                { title: "Ser", ...dodatki.ser },
-                { title: "Inne", ...dodatki.inne },
-              ].map((d) => (
-                <div key={d.title} className="bg-background rounded-xl p-6 border border-border">
-                  <h4 className="font-display text-lg font-bold text-primary uppercase tracking-wider">{d.title}</h4>
-                  <p className="mt-2 text-sm text-foreground leading-relaxed">{d.items}</p>
-                  {d.price && <p className="mt-2 text-xs text-muted-foreground">{d.price}</p>}
-                </div>
-              ))}
+              {(["miesny", "warzywny", "ser", "inne"] as const).map((k) => {
+                const d = dodatki[k];
+                return (
+                  <div key={k} className="bg-background rounded-xl p-6 border border-border">
+                    <h4 className="font-display text-lg font-bold text-primary uppercase tracking-wider">{pick(d.title, lang)}</h4>
+                    <p className="mt-2 text-sm text-foreground leading-relaxed">{pick(d.items, lang)}</p>
+                    {pick(d.price, lang) && <p className="mt-2 text-xs text-muted-foreground">{pick(d.price, lang)}</p>}
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}

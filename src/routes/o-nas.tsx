@@ -8,9 +8,9 @@ import { useI18n } from "@/i18n/context";
 export const Route = createFileRoute("/o-nas")({
   head: () => ({
     meta: [
-      { title: "O nas — NA WAŁKU Neapolitan Pizza Wałbrzych" },
-      { name: "description", content: "Poznaj NA WAŁKU — pizzerię, gdzie tradycja Neapolu spotyka się z pasją do gotowania. Dowiedz się więcej o naszym piecu, składnikach i filozofii." },
-      { property: "og:title", content: "O nas — NA WAŁKU" },
+      { title: "O nas - NA WAŁKU Neapolitan Pizza Wałbrzych" },
+      { name: "description", content: "Poznaj NA WAŁKU - pizzerię, gdzie tradycja Neapolu spotyka się z pasją do gotowania. Dowiedz się więcej o naszym piecu, składnikach i filozofii." },
+      { property: "og:title", content: "O nas - NA WAŁKU" },
       { property: "og:description", content: "Pizzeria neapolitańska z piecem opalanym drewnem w Wałbrzychu." },
     ],
   }),

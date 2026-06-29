@@ -20,7 +20,7 @@ export const translations: Record<Lang, Dict> = {
     "hero.badge": "Wypiekane w piecu opalanym drewnem",
     "hero.subtitle": "neapolitan pizza",
     "hero.lead":
-      "Autentyczna pizza z Neapolu w sercu Wałbrzycha. Cienkie, chrupiące ciasto, San Marzano DOP, mozzarella di bufala — wszystko z najwyższej półki.",
+      "Autentyczna pizza z Neapolu w sercu Wałbrzycha. Cienkie, chrupiące ciasto, San Marzano DOP, mozzarella di bufala - wszystko z najwyższej półki.",
     "hero.cta.menu": "Zobacz menu",
     "hero.cta.book": "Zarezerwuj stolik",
     "hero.reviews": "opinii Google",
@@ -38,7 +38,7 @@ export const translations: Record<Lang, Dict> = {
     "story.kicker": "Nasza historia",
     "story.title": "Pizza, jakiej nigdy nie jadłeś.",
     "story.body":
-      "W NA WAŁKU robimy pizzę dokładnie tak, jak robi się ją w Neapolu — od długo dojrzewającego ciasta, przez San Marzano DOP, po piec opalany drewnem. Każda pizza wychodzi z pieca w mniej niż 90 sekund i trafia na stół chrupiąca, aromatyczna i z lekko opieczonym brzegiem.",
+      "W NA WAŁKU robimy pizzę dokładnie tak, jak robi się ją w Neapolu - od długo dojrzewającego ciasta, przez San Marzano DOP, po piec opalany drewnem. Każda pizza wychodzi z pieca w mniej niż 90 sekund i trafia na stół chrupiąca, aromatyczna i z lekko opieczonym brzegiem.",
     "story.s1": "Tyle dojrzewa nasze ciasto",
     "story.s2": "Temperatura w piecu",
     "story.s3": "Składniki z Włoch",
@@ -78,11 +78,11 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "O nas",
     "about.title": "Pasja, drewno, ogień.",
-    "about.quote": "\"Pizza to nie tylko jedzenie — to rytuał, który zaczyna się od dobrego ciasta.\"",
+    "about.quote": "\"Pizza to nie tylko jedzenie - to rytuał, który zaczyna się od dobrego ciasta.\"",
     "about.p1":
-      "NA WAŁKU powstało z prostego marzenia: przywieźć do Wałbrzycha prawdziwą, klasyczną pizzę neapolitańską. Taką, jaką jada się na uliczkach Neapolu — z chrupiącym, lekko opieczonym brzegiem, miękkim środkiem i składnikami, które same opowiadają historię.",
+      "NA WAŁKU powstało z prostego marzenia: przywieźć do Wałbrzycha prawdziwą, klasyczną pizzę neapolitańską. Taką, jaką jada się na uliczkach Neapolu - z chrupiącym, lekko opieczonym brzegiem, miękkim środkiem i składnikami, które same opowiadają historię.",
     "about.p2":
-      "Nasze ciasto dojrzewa 48 godzin. Używamy mąki typu \"00\", drożdży i wody — nic więcej. Pomidory San Marzano DOP, mozzarella di bufala DOP, oliwa extra virgin — wszystko sprowadzane prosto z Włoch. Pizza wjeżdża do pieca na 450°C i wychodzi w mniej niż 90 sekund.",
+      "Nasze ciasto dojrzewa 48 godzin. Używamy mąki typu \"00\", drożdży i wody - nic więcej. Pomidory San Marzano DOP, mozzarella di bufala DOP, oliwa extra virgin - wszystko sprowadzane prosto z Włoch. Pizza wjeżdża do pieca na 450°C i wychodzi w mniej niż 90 sekund.",
     "about.v1.t": "Tradycja",
     "about.v1.d": "Receptury prosto z Neapolu",
     "about.v2.t": "Piec opalany drewnem",
@@ -98,13 +98,13 @@ export const translations: Record<Lang, Dict> = {
 
     "contact.kicker": "Kontakt",
     "contact.title": "Wpadnij do nas",
-    "contact.body": "Czekamy na Ciebie w sercu Wałbrzycha — zarezerwuj stolik lub po prostu wpadnij.",
+    "contact.body": "Czekamy na Ciebie w sercu Wałbrzycha - zarezerwuj stolik lub po prostu wpadnij.",
     "contact.address": "Adres",
     "contact.directions": "Wyznacz trasę",
     "contact.hours": "Godziny otwarcia",
     "contact.avg": "Średnia cena: 40–60 zł za osobę",
     "contact.book": "Rezerwacja",
-    "contact.bookBody": "Najlepiej zadzwoń — odbieramy szybko i pomożemy znaleźć idealny termin.",
+    "contact.bookBody": "Najlepiej zadzwoń - odbieramy szybko i pomożemy znaleźć idealny termin.",
     "contact.callNow": "Zadzwoń teraz",
     "contact.day.mon": "Poniedziałek",
     "contact.day.tue": "Wtorek",
@@ -136,7 +136,7 @@ export const translations: Record<Lang, Dict> = {
     "hero.badge": "Baked in a wood-fired oven",
     "hero.subtitle": "neapolitan pizza",
     "hero.lead":
-      "Authentic Neapolitan pizza in the heart of Wałbrzych. Thin, crispy crust, San Marzano DOP, buffalo mozzarella — only top-shelf ingredients.",
+      "Authentic Neapolitan pizza in the heart of Wałbrzych. Thin, crispy crust, San Marzano DOP, buffalo mozzarella - only top-shelf ingredients.",
     "hero.cta.menu": "See the menu",
     "hero.cta.book": "Book a table",
     "hero.reviews": "Google reviews",
@@ -154,7 +154,7 @@ export const translations: Record<Lang, Dict> = {
     "story.kicker": "Our story",
     "story.title": "Pizza like you've never tasted.",
     "story.body":
-      "At NA WAŁKU we make pizza exactly the way they do it in Naples — from long-fermented dough, through San Marzano DOP, to a wood-fired oven. Every pizza comes out in under 90 seconds, crispy, fragrant, with a perfectly charred crust.",
+      "At NA WAŁKU we make pizza exactly the way they do it in Naples - from long-fermented dough, through San Marzano DOP, to a wood-fired oven. Every pizza comes out in under 90 seconds, crispy, fragrant, with a perfectly charred crust.",
     "story.s1": "Dough fermentation",
     "story.s2": "Oven temperature",
     "story.s3": "Italian ingredients",
@@ -194,11 +194,11 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "About us",
     "about.title": "Passion, wood, fire.",
-    "about.quote": "\"Pizza isn't just food — it's a ritual that begins with great dough.\"",
+    "about.quote": "\"Pizza isn't just food - it's a ritual that begins with great dough.\"",
     "about.p1":
-      "NA WAŁKU was born from a simple dream: bring real, classic Neapolitan pizza to Wałbrzych. The kind you'd eat in the streets of Naples — crispy charred crust, soft centre and ingredients that tell their own story.",
+      "NA WAŁKU was born from a simple dream: bring real, classic Neapolitan pizza to Wałbrzych. The kind you'd eat in the streets of Naples - crispy charred crust, soft centre and ingredients that tell their own story.",
     "about.p2":
-      "Our dough ferments for 48 hours. We use type \"00\" flour, yeast and water — nothing else. San Marzano DOP tomatoes, buffalo mozzarella DOP, extra virgin olive oil — all imported from Italy. The pizza enters the oven at 450°C and comes out in under 90 seconds.",
+      "Our dough ferments for 48 hours. We use type \"00\" flour, yeast and water - nothing else. San Marzano DOP tomatoes, buffalo mozzarella DOP, extra virgin olive oil - all imported from Italy. The pizza enters the oven at 450°C and comes out in under 90 seconds.",
     "about.v1.t": "Tradition",
     "about.v1.d": "Recipes straight from Naples",
     "about.v2.t": "Wood-fired oven",
@@ -214,13 +214,13 @@ export const translations: Record<Lang, Dict> = {
 
     "contact.kicker": "Contact",
     "contact.title": "Drop by",
-    "contact.body": "We're waiting for you in the heart of Wałbrzych — book a table or just stop by.",
+    "contact.body": "We're waiting for you in the heart of Wałbrzych - book a table or just stop by.",
     "contact.address": "Address",
     "contact.directions": "Get directions",
     "contact.hours": "Opening hours",
     "contact.avg": "Average price: PLN 40–60 per person",
     "contact.book": "Reservation",
-    "contact.bookBody": "Best to call — we pick up fast and find the perfect time slot.",
+    "contact.bookBody": "Best to call - we pick up fast and find the perfect time slot.",
     "contact.callNow": "Call now",
     "contact.day.mon": "Monday",
     "contact.day.tue": "Tuesday",
@@ -252,7 +252,7 @@ export const translations: Record<Lang, Dict> = {
     "hero.badge": "Horneada en horno de leña",
     "hero.subtitle": "pizza napolitana",
     "hero.lead":
-      "Auténtica pizza napolitana en el corazón de Wałbrzych. Masa fina y crujiente, San Marzano DOP, mozzarella de búfala — solo ingredientes de primera.",
+      "Auténtica pizza napolitana en el corazón de Wałbrzych. Masa fina y crujiente, San Marzano DOP, mozzarella de búfala - solo ingredientes de primera.",
     "hero.cta.menu": "Ver el menú",
     "hero.cta.book": "Reservar mesa",
     "hero.reviews": "reseñas en Google",
@@ -270,7 +270,7 @@ export const translations: Record<Lang, Dict> = {
     "story.kicker": "Nuestra historia",
     "story.title": "Una pizza como nunca has probado.",
     "story.body":
-      "En NA WAŁKU hacemos la pizza exactamente como se hace en Nápoles — desde una masa de larga fermentación, San Marzano DOP, hasta el horno de leña. Cada pizza sale en menos de 90 segundos, crujiente, aromática y con borde dorado.",
+      "En NA WAŁKU hacemos la pizza exactamente como se hace en Nápoles - desde una masa de larga fermentación, San Marzano DOP, hasta el horno de leña. Cada pizza sale en menos de 90 segundos, crujiente, aromática y con borde dorado.",
     "story.s1": "Fermentación de la masa",
     "story.s2": "Temperatura del horno",
     "story.s3": "Ingredientes italianos",
@@ -310,11 +310,11 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "Nosotros",
     "about.title": "Pasión, leña, fuego.",
-    "about.quote": "\"La pizza no es solo comida — es un ritual que empieza con una buena masa.\"",
+    "about.quote": "\"La pizza no es solo comida - es un ritual que empieza con una buena masa.\"",
     "about.p1":
-      "NA WAŁKU nació de un sueño simple: traer a Wałbrzych la auténtica pizza napolitana clásica. Esa que se come en las calles de Nápoles — borde crujiente, centro tierno e ingredientes con historia.",
+      "NA WAŁKU nació de un sueño simple: traer a Wałbrzych la auténtica pizza napolitana clásica. Esa que se come en las calles de Nápoles - borde crujiente, centro tierno e ingredientes con historia.",
     "about.p2":
-      "Nuestra masa fermenta 48 horas. Usamos harina tipo \"00\", levadura y agua — nada más. Tomate San Marzano DOP, mozzarella di bufala DOP, aceite de oliva extra virgen — todo importado de Italia. La pizza entra al horno a 450°C y sale en menos de 90 segundos.",
+      "Nuestra masa fermenta 48 horas. Usamos harina tipo \"00\", levadura y agua - nada más. Tomate San Marzano DOP, mozzarella di bufala DOP, aceite de oliva extra virgen - todo importado de Italia. La pizza entra al horno a 450°C y sale en menos de 90 segundos.",
     "about.v1.t": "Tradición",
     "about.v1.d": "Recetas directas de Nápoles",
     "about.v2.t": "Horno de leña",
@@ -330,13 +330,13 @@ export const translations: Record<Lang, Dict> = {
 
     "contact.kicker": "Contacto",
     "contact.title": "Pásate a vernos",
-    "contact.body": "Te esperamos en el corazón de Wałbrzych — reserva mesa o simplemente ven.",
+    "contact.body": "Te esperamos en el corazón de Wałbrzych - reserva mesa o simplemente ven.",
     "contact.address": "Dirección",
     "contact.directions": "Cómo llegar",
     "contact.hours": "Horario",
     "contact.avg": "Precio medio: 40–60 PLN por persona",
     "contact.book": "Reserva",
-    "contact.bookBody": "Mejor llámanos — contestamos rápido y encontramos el mejor horario.",
+    "contact.bookBody": "Mejor llámanos - contestamos rápido y encontramos el mejor horario.",
     "contact.callNow": "Llamar ahora",
     "contact.day.mon": "Lunes",
     "contact.day.tue": "Martes",
@@ -368,7 +368,7 @@ export const translations: Record<Lang, Dict> = {
     "hero.badge": "Im Holzofen gebacken",
     "hero.subtitle": "neapolitanische Pizza",
     "hero.lead":
-      "Authentische neapolitanische Pizza im Herzen von Wałbrzych. Dünner, knuspriger Boden, San Marzano DOP, Büffelmozzarella — alles erste Klasse.",
+      "Authentische neapolitanische Pizza im Herzen von Wałbrzych. Dünner, knuspriger Boden, San Marzano DOP, Büffelmozzarella - alles erste Klasse.",
     "hero.cta.menu": "Speisekarte ansehen",
     "hero.cta.book": "Tisch reservieren",
     "hero.reviews": "Google-Bewertungen",
@@ -386,7 +386,7 @@ export const translations: Record<Lang, Dict> = {
     "story.kicker": "Unsere Geschichte",
     "story.title": "Eine Pizza, wie du sie noch nie probiert hast.",
     "story.body":
-      "Bei NA WAŁKU machen wir Pizza genauso, wie man sie in Neapel macht — vom langgereiften Teig über San Marzano DOP bis zum Holzofen. Jede Pizza ist in unter 90 Sekunden fertig, knusprig, aromatisch, mit perfekt gebräuntem Rand.",
+      "Bei NA WAŁKU machen wir Pizza genauso, wie man sie in Neapel macht - vom langgereiften Teig über San Marzano DOP bis zum Holzofen. Jede Pizza ist in unter 90 Sekunden fertig, knusprig, aromatisch, mit perfekt gebräuntem Rand.",
     "story.s1": "Teigreifezeit",
     "story.s2": "Ofentemperatur",
     "story.s3": "Italienische Zutaten",
@@ -426,11 +426,11 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "Über uns",
     "about.title": "Leidenschaft, Holz, Feuer.",
-    "about.quote": "\"Pizza ist nicht nur Essen — es ist ein Ritual, das mit gutem Teig beginnt.\"",
+    "about.quote": "\"Pizza ist nicht nur Essen - es ist ein Ritual, das mit gutem Teig beginnt.\"",
     "about.p1":
-      "NA WAŁKU entstand aus einem einfachen Traum: echte, klassische neapolitanische Pizza nach Wałbrzych zu bringen. Die, die man in den Gassen Neapels isst — knuspriger Rand, weiche Mitte und Zutaten, die ihre eigene Geschichte erzählen.",
+      "NA WAŁKU entstand aus einem einfachen Traum: echte, klassische neapolitanische Pizza nach Wałbrzych zu bringen. Die, die man in den Gassen Neapels isst - knuspriger Rand, weiche Mitte und Zutaten, die ihre eigene Geschichte erzählen.",
     "about.p2":
-      "Unser Teig reift 48 Stunden. Wir verwenden Mehl Typ \"00\", Hefe und Wasser — mehr nicht. San-Marzano-DOP-Tomaten, Büffelmozzarella DOP, natives Olivenöl extra — alles aus Italien. Die Pizza geht bei 450°C in den Ofen und ist in unter 90 Sekunden fertig.",
+      "Unser Teig reift 48 Stunden. Wir verwenden Mehl Typ \"00\", Hefe und Wasser - mehr nicht. San-Marzano-DOP-Tomaten, Büffelmozzarella DOP, natives Olivenöl extra - alles aus Italien. Die Pizza geht bei 450°C in den Ofen und ist in unter 90 Sekunden fertig.",
     "about.v1.t": "Tradition",
     "about.v1.d": "Rezepte aus Neapel",
     "about.v2.t": "Holzofen",
@@ -446,13 +446,13 @@ export const translations: Record<Lang, Dict> = {
 
     "contact.kicker": "Kontakt",
     "contact.title": "Komm vorbei",
-    "contact.body": "Wir warten im Herzen von Wałbrzych — reserviere einen Tisch oder komm einfach.",
+    "contact.body": "Wir warten im Herzen von Wałbrzych - reserviere einen Tisch oder komm einfach.",
     "contact.address": "Adresse",
     "contact.directions": "Anfahrt",
     "contact.hours": "Öffnungszeiten",
     "contact.avg": "Durchschnittspreis: 40–60 PLN pro Person",
     "contact.book": "Reservierung",
-    "contact.bookBody": "Am besten anrufen — wir gehen schnell ran und finden den passenden Termin.",
+    "contact.bookBody": "Am besten anrufen - wir gehen schnell ran und finden den passenden Termin.",
     "contact.callNow": "Jetzt anrufen",
     "contact.day.mon": "Montag",
     "contact.day.tue": "Dienstag",

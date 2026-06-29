@@ -340,7 +340,7 @@ export const menu: MenuSection[] = [
     items: [
       { name: "Grimbergen Double Ambree", price: 17, desc: T("Piwo ciemne słodowe 330 ml", "Dark malt beer 330 ml", "Cerveza oscura de malta 330 ml", "Dunkles Malzbier 330 ml") },
       { name: "Žatecký Pils", price: 17, desc: T("500 ml", "500 ml", "500 ml", "500 ml") },
-      { name: "Somersby", price: 16, desc: T("400 ml — zapytaj o dostępny smak", "400 ml — ask for the available flavour", "400 ml — pregunta por el sabor disponible", "400 ml — frag nach der verfügbaren Sorte") },
+      { name: "Somersby", price: 16, desc: T("400 ml - zapytaj o dostępny smak", "400 ml - ask for the available flavour", "400 ml - pregunta por el sabor disponible", "400 ml - frag nach der verfügbaren Sorte") },
       { name: "Książęce IPA", price: 17, desc: T("500 ml", "500 ml", "500 ml", "500 ml") },
       { name: "Birra Messina Cristalli di Sale", price: 17, desc: T("330 ml", "330 ml", "330 ml", "330 ml") },
       { name: "Žatecký 0%", price: 17, desc: T("500 ml", "500 ml", "500 ml", "500 ml") },
@@ -365,11 +365,11 @@ export const menu: MenuSection[] = [
     id: "napoje-zimne",
     title: T("Napoje zimne", "Cold drinks", "Bebidas frías", "Kaltgetränke"),
     items: [
-      { name: "Woda mineralna Levico", price: 13, desc: T("Naturalna woda mineralna z włoskich Alp 500 ml — gazowana lub niegazowana", "Natural mineral water from the Italian Alps 500 ml — sparkling or still", "Agua mineral natural de los Alpes italianos 500 ml — con o sin gas", "Natürliches Mineralwasser aus den italienischen Alpen 500 ml — mit oder ohne Kohlensäure") },
+      { name: "Woda mineralna Levico", price: 13, desc: T("Naturalna woda mineralna z włoskich Alp 500 ml - gazowana lub niegazowana", "Natural mineral water from the Italian Alps 500 ml - sparkling or still", "Agua mineral natural de los Alpes italianos 500 ml - con o sin gas", "Natürliches Mineralwasser aus den italienischen Alpen 500 ml - mit oder ohne Kohlensäure") },
       { name: "Coca-Cola / Zero", price: 12, desc: T("250 ml", "250 ml", "250 ml", "250 ml") },
-      { name: "Dobry Materiał", price: 17, desc: T("330 ml — o dostępne smaki zapytaj obsługę", "330 ml — ask staff for available flavours", "330 ml — pregunta al personal por los sabores", "330 ml — frag das Personal nach den Sorten") },
-      { name: "Dobry Materiał soki NFC 100%", price: 12, desc: T("250 ml — pomarańcza w jabłku, smaczne jabłko", "250 ml — orange-apple, tasty apple", "250 ml — naranja-manzana, manzana", "250 ml — Orange-Apfel, Apfel") },
-      { name: "Lemon Soda", price: 13, desc: T("330 ml — włoska lemoniada gazowana: orange, mojito, lemon", "330 ml — Italian sparkling lemonade: orange, mojito, lemon", "330 ml — limonada italiana con gas: orange, mojito, lemon", "330 ml — italienische Sprudel-Limonade: Orange, Mojito, Lemon") },
+      { name: "Dobry Materiał", price: 17, desc: T("330 ml - o dostępne smaki zapytaj obsługę", "330 ml - ask staff for available flavours", "330 ml - pregunta al personal por los sabores", "330 ml - frag das Personal nach den Sorten") },
+      { name: "Dobry Materiał soki NFC 100%", price: 12, desc: T("250 ml - pomarańcza w jabłku, smaczne jabłko", "250 ml - orange-apple, tasty apple", "250 ml - naranja-manzana, manzana", "250 ml - Orange-Apfel, Apfel") },
+      { name: "Lemon Soda", price: 13, desc: T("330 ml - włoska lemoniada gazowana: orange, mojito, lemon", "330 ml - Italian sparkling lemonade: orange, mojito, lemon", "330 ml - limonada italiana con gas: orange, mojito, lemon", "330 ml - italienische Sprudel-Limonade: Orange, Mojito, Lemon") },
     ],
   },
 ];

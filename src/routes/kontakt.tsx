@@ -6,9 +6,9 @@ import { useI18n } from "@/i18n/context";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt — NA WAŁKU Neapolitan Pizza Wałbrzych" },
-      { name: "description", content: "Pizzeria NA WAŁKU — Hetmańska 1C, 58-316 Wałbrzych. Telefon: 513 718 011. Otwarte codziennie od 13:00." },
-      { property: "og:title", content: "Kontakt — NA WAŁKU" },
+      { title: "Kontakt - NA WAŁKU Neapolitan Pizza Wałbrzych" },
+      { name: "description", content: "Pizzeria NA WAŁKU - Hetmańska 1C, 58-316 Wałbrzych. Telefon: 513 718 011. Otwarte codziennie od 13:00." },
+      { property: "og:title", content: "Kontakt - NA WAŁKU" },
       { property: "og:description", content: "Hetmańska 1C, Wałbrzych. Tel. 513 718 011." },
     ],
   }),

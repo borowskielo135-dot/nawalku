@@ -8,10 +8,10 @@ import { Pizza, Coffee, Salad, Beer, Sparkles, Soup, Cake } from "lucide-react";
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
-      { title: "Menu — NA WAŁKU Neapolitan Pizza Wałbrzych" },
+      { title: "Menu - NA WAŁKU Neapolitan Pizza Wałbrzych" },
       { name: "description", content: "Pełne menu pizzerii NA WAŁKU. Pizze rossa, bianca, speciale, sałatki, desery, koktajle, piwo i napoje. Wałbrzych, Hetmańska 1C." },
       { property: "og:title", content: "Menu NA WAŁKU" },
-      { property: "og:description", content: "Pizze neapolitańskie i więcej — pełne menu pizzerii NA WAŁKU." },
+      { property: "og:description", content: "Pizze neapolitańskie i więcej - pełne menu pizzerii NA WAŁKU." },
     ],
   }),
   component: MenuPage,

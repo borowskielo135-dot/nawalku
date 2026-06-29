@@ -12,9 +12,9 @@ import { useI18n } from "@/i18n/context";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NA WAŁKU — Neapolitan Pizza w Wałbrzychu | 4,8 ★" },
+      { title: "NA WAŁKU - Neapolitan Pizza w Wałbrzychu | 4,8 ★" },
       { name: "description", content: "Autentyczna pizza neapolitańska w Wałbrzychu. Wypiekana w piecu opalanym drewnem. Hetmańska 1C. Rezerwacje: 513 718 011." },
-      { property: "og:title", content: "NA WAŁKU — Neapolitan Pizza" },
+      { property: "og:title", content: "NA WAŁKU - Neapolitan Pizza" },
       { property: "og:description", content: "Najlepsza pizza neapolitańska w Wałbrzychu. 4,8 ★ na podstawie 1988 opinii." },
       { property: "og:image", content: "/og-image.jpg" },
       { name: "twitter:image", content: "/og-image.jpg" },
@@ -35,7 +35,7 @@ const reviews = [
     author: "Michał Zalewski",
     role: "Lokalny przewodnik · 77 opinii",
     when: "5 miesięcy temu",
-    text: "Rewelacja! Pizze oryginalne, wyraziste. Przed pizzą oferują czekadełko w formie placka od pizzy z oliwą. Trzy oliwy na stole to naprawdę rzadkość — widać gdzie jest podrzędny bar, a gdzie prawdziwa restauracja. Pierwszy raz spotkałem się z krojeniem pizzy nożycami. Obsługa bardzo miła i profesjonalna.",
+    text: "Rewelacja! Pizze oryginalne, wyraziste. Przed pizzą oferują czekadełko w formie placka od pizzy z oliwą. Trzy oliwy na stole to naprawdę rzadkość - widać gdzie jest podrzędny bar, a gdzie prawdziwa restauracja. Pierwszy raz spotkałem się z krojeniem pizzy nożycami. Obsługa bardzo miła i profesjonalna.",
   },
   {
     author: "Ada S.",
@@ -47,7 +47,7 @@ const reviews = [
     author: "Ilona",
     role: "3 opinie",
     when: "2 miesiące temu",
-    text: "Jadłam już wiele pizz, ale Pizza Burratini zdecydowanie wygrywa wszystko. To była najlepsza pizza, jaką jadłam — idealnie wypieczone, chrupiące ciasto, świetnej jakości składniki i ta kremowa burrata, która rozpływa się na ciepłej pizzy… absolutne niebo.",
+    text: "Jadłam już wiele pizz, ale Pizza Burratini zdecydowanie wygrywa wszystko. To była najlepsza pizza, jaką jadłam - idealnie wypieczone, chrupiące ciasto, świetnej jakości składniki i ta kremowa burrata, która rozpływa się na ciepłej pizzy… absolutne niebo.",
   },
 ];
 

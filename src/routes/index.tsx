@@ -223,12 +223,12 @@ function HomePage() {
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: t("opt.dinein"), desc: t("opt.dineinDesc"), emoji: "🍷" },
-              { title: t("opt.takeaway"), desc: t("opt.takeawayDesc"), emoji: "📦" },
-              { title: t("opt.delivery"), desc: t("opt.deliveryDesc"), emoji: "🛵" },
+              { title: t("opt.dinein"), desc: t("opt.dineinDesc"), img: optDineIn },
+              { title: t("opt.takeaway"), desc: t("opt.takeawayDesc"), img: optTakeaway },
+              { title: t("opt.delivery"), desc: t("opt.deliveryDesc"), img: optDelivery },
             ].map((o, i) => (
               <div key={o.title} className="reveal bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:border-primary/30 transition-all hover:-translate-y-1" style={{ transitionDelay: `${i * 100}ms` }}>
-                <div className="text-4xl">{o.emoji}</div>
+                <img src={o.img} alt="" loading="lazy" width={512} height={512} className="w-20 h-20 object-contain" />
                 <h3 className="mt-4 font-display text-2xl font-bold">{o.title}</h3>
                 <p className="mt-2 text-muted-foreground">{o.desc}</p>
               </div>

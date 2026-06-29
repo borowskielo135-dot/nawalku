@@ -17,7 +17,16 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <div className="text-7xl mb-4 animate-bounce">🍕</div>
+        <div className="container mx-auto px-6 flex items-center justify-between h-20">
+        <Link to="/" className="flex items-center gap-2 group">
+          <span className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+            NA WAŁKU
+          </span>
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.25em] text-primary font-semibold border-l border-border pl-2">
+            Neapolitan Pizza
+          </span>
+        </Link>
+
         <h1 className="font-display text-8xl font-bold text-primary">404</h1>
         <h2 className="mt-4 text-xl font-semibold">Strona nie istnieje</h2>
         <p className="mt-2 text-sm text-muted-foreground">

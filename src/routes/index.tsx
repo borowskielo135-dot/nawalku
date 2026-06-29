@@ -6,6 +6,9 @@ import doughImg from "@/assets/dough.jpg";
 import diavolaImg from "@/assets/diavola.jpg";
 import burrataImg from "@/assets/burrata.jpg";
 import margheritaImg from "@/assets/margherita.jpg";
+import optDineIn from "@/assets/opt-dinein.png";
+import optTakeaway from "@/assets/opt-takeaway.png";
+import optDelivery from "@/assets/opt-delivery.png";
 import { useReveal } from "@/hooks/use-reveal";
 import { useI18n } from "@/i18n/context";
 
